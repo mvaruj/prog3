@@ -4,14 +4,14 @@ function RandInt(min, max) {
     return z;
 }
 var matrix = [];
-var n = 30;
-var m = 30;
+var Mheight = 30;
+var Mlenght = 30;
 
-for (var i = 0; i <= n; ++i) {
+for (var i = 0; i <= Mheight; ++i) {
     matrix[i] = [];
 }
-for (var y = 0; y <= n; y++) {
-    for (var x = 0; x <= m; x++) {
+for (var y = 0; y <= Mheight; y++) {
+    for (var x = 0; x <= Mlenght; x++) {
         matrix[y][x] = 0;
     }
 }
@@ -22,35 +22,35 @@ var tokos4 = 0.1;
 var tokos5 = 1 ;
 
 
-var qanak1 = n * m * tokos1 / 100;
-var qanak2 = n * m * tokos2 / 100;
-var qanak3 = n * m * tokos3 / 100;
-var qanak4 = n * m * tokos4 / 100;
-var qanak5 = n * m * tokos5 / 100;
+var qanak1 = Mheight * Mlenght * tokos1 / 100;
+var qanak2 = Mheight * Mlenght * tokos2 / 100;
+var qanak3 = Mheight * Mlenght * tokos3 / 100;
+var qanak4 = Mheight * Mlenght * tokos4 / 100;
+var qanak5 = Mheight * Mlenght * tokos5 / 100;
 
 for (var z = 0; z < qanak1; ++z) {
-    var rx = RandInt(0, m);
-    var ry = RandInt(0, n);
+    var rx = RandInt(0, Mlenght);
+    var ry = RandInt(0, Mheight);
     matrix[ry][rx] = 1;
 }
 for (var z = 0; z < qanak2; ++z) {
-    var rx = RandInt(0, m);
-    var ry = RandInt(0, n);
+    var rx = RandInt(0, Mlenght);
+    var ry = RandInt(0, Mheight);
     matrix[ry][rx] = 2;
 }
 for (var z = 0; z < qanak3; ++z) {
-    var rx = RandInt(0, m);
-    var ry = RandInt(0, n);
+    var rx = RandInt(0, Mlenght);
+    var ry = RandInt(0, Mheight);
     matrix[ry][rx] = 3;
 }
 for (var z = 0; z < qanak4; ++z) {
-    var rx = RandInt(0, m);
-    var ry = RandInt(0, n);
+    var rx = RandInt(0, Mlenght);
+    var ry = RandInt(0, Mheight);
     matrix[ry][rx] = 4;
 }
 for (var z = 0; z < qanak5; ++z) {
-    var rx = RandInt(0, m);
-    var ry = RandInt(0, n);
+    var rx = RandInt(0, Mlenght);
+    var ry = RandInt(0, Mheight);
     matrix[ry][rx] = 5;
 }
 
