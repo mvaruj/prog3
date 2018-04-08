@@ -64,7 +64,7 @@ var vorsordArr = [];
 var bombArr = [];
 function setup() {
 
-    frameRate(8);
+    frameRate(11);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
     noStroke();
