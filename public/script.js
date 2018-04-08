@@ -4,8 +4,8 @@ function RandInt(min, max) {
     return z;
 }
 var matrix = [];
-var n = 40;
-var m = 40;
+var n = 30;
+var m = 30;
 
 for (var i = 0; i <= n; ++i) {
     matrix[i] = [];
@@ -55,7 +55,7 @@ for (var z = 0; z < qanak5; ++z) {
 }
 
 
-var side = 10;
+var side = 20;
 var grassArr = [];
 var xotakerArr = [];
 var gishatichArr = [];
