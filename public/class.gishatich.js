@@ -8,7 +8,7 @@ class Gishatich extends KendaniEak{
     }
     yntrelVandak(ch) {
         this.stanalNorKordinatner();
-        return super.    yntrelVandak(ch);
+        return super.yntrelVandak(ch);
 
     }
     utel() {
@@ -25,6 +25,7 @@ class Gishatich extends KendaniEak{
             for (var i in xotakerArr) {
                 if (xotakerArr[i].x == this.x && xotakerArr[i].y == this.y) {
                     xotakerArr.splice(i, 1);
+                    break;
                 }
             }
 
@@ -40,6 +41,7 @@ class Gishatich extends KendaniEak{
                 for (var i in grassArr) {
                     if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
                         grassArr.splice(i, 1);
+                        break;
                     }
                 }
 
@@ -70,6 +72,7 @@ class Gishatich extends KendaniEak{
         for (var i in gishatichArr) {
             if (gishatichArr[i].x == this.x && gishatichArr[i].y == this.y) {
                 gishatichArr.splice(i, 1);
+                
                 break;
             }
         }
@@ -89,6 +92,7 @@ class Gishatich extends KendaniEak{
                     for (var i in grassArr) {
                         if (grassArr[i].x == dir[0] && grassArr[i].y == dir[1]) {
                             grassArr.splice(i, 1);
+                            break;
                         }
                     }
                 }

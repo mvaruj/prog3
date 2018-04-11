@@ -1,7 +1,5 @@
 
 
-//--------------------------EMOJI-----------------------
-
 
 
 class Emoji extends KendaniEak {
@@ -30,6 +28,7 @@ class Emoji extends KendaniEak {
             for (var i in grassArr) {
                 if (grassArr[i].x == vandak[0] && grassArr[i].y == vandak[1]) {
                     grassArr.splice(i, 1);
+                    break;
                 }
             }
         }
@@ -37,6 +36,7 @@ class Emoji extends KendaniEak {
             for (var i in xotakerArr) {
                 if (xotakerArr[i].x == vandak[0] && xotakerArr[i].y == vandak[1]) {
                     xotakerArr.splice(i, 1);
+                    break;
                 }
             }
         }
@@ -44,12 +44,14 @@ class Emoji extends KendaniEak {
             for (var i in gishatichArr) {
                 if (gishatichArr[i].x == vandak[0] && gishatichArr[i].y == vandak[1]) {
                     gishatichArr.splice(i, 1);
+                    break;
                 }
             }
         }
         if (vandak==5) {
             if (vorsordArr[i].x == vandak[0] && vorsordArr[i].y == vandak[1]) {
                 vorsordArr.splice(i, 1);
+                // break;
             }
         }  
         matrix[this.y][this.x] = 0;
@@ -71,6 +73,7 @@ class Emoji extends KendaniEak {
                         for (var i in xotakerArr) {
                             if (xotakerArr[i].x == d0 && xotakerArr[i].y == d1) {
                                 xotakerArr.splice(i, 1);
+                                break;
                             }
                         }
                     }
@@ -78,6 +81,7 @@ class Emoji extends KendaniEak {
                         for (var i in gishatichArr) {
                             if (gishatichArr[i].x == d0 && gishatichArr[i].y == d1) {
                                 gishatichArr.splice(i, 1);
+                                break;
                             }
                         }
                     }
@@ -85,6 +89,7 @@ class Emoji extends KendaniEak {
                         for (var i in vorsordArr) {
                             if (vorsordArr[i].x == d0 && vorsordArr[i].y == d1) {
                                 vorsordArr.splice(i, 1);
+                                break;
                             }
                         }
                     }
@@ -92,6 +97,7 @@ class Emoji extends KendaniEak {
                         for (var i in bombArr) {
                             if (bombArr[i].x == d0 && bombArr[i].y == d1) {
                                 bombArr.splice(i, 1);
+                                break;
                             }
                         }
                     }

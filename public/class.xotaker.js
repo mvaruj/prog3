@@ -29,6 +29,7 @@ class Xotaker extends KendaniEak{
             for (var i in grassArr) {
                 if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
                     grassArr.splice(i, 1);
+                    break;
                 }
             }
 
@@ -59,6 +60,7 @@ class Xotaker extends KendaniEak{
         for (var i in xotakerArr) {
             if (xotakerArr[i].x == this.x && xotakerArr[i].y == this.y) {
                 xotakerArr.splice(i, 1);
+                break;
             }
         }
      }
@@ -77,6 +79,7 @@ class Xotaker extends KendaniEak{
                 for (var i in grassArr) {
                     if (grassArr[i].x == dir[0] && grassArr[i].y == dir[1]) {
                         grassArr.splice(i, 1);
+                        break;
                     }
                 }
                 var norXotaker = new Xotaker(dir[0], dir[1]);

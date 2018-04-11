@@ -5,7 +5,7 @@ function RandInt(min, max) {
 }
 var matrix = [];
 var Mheight = 30;
-var Mlenght = 30;
+var Mlenght = 50;
 
 for (var i = 0; i <= Mheight; ++i) {
     matrix[i] = [];
@@ -156,6 +156,7 @@ function draw() {
                 for (var i in grassArr) {
                     if (grassArr[i].x == x && grassArr[i].y == y) {
                         grassArr.splice(i, 1);
+                        break;
                     }
                 }               
             }

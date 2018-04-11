@@ -66,6 +66,7 @@ class Dinamit extends KendaniEak{
                 for (var i in bombArr) {
                     if (bombArr[i].x == this.x && bombArr[i].y == this.y) {
                         bombArr.splice(i, 1);
+                        break;
                     }
                 }        
     }
