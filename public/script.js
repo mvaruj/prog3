@@ -67,7 +67,7 @@ function setup() {
     frameRate(11);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
-    noStroke();
+
 
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {

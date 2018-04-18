@@ -58,7 +58,7 @@ class Dinamit extends KendaniEak{
                 }
             }
 
-            if(matrix[y][x]!=4){
+            if(matrix[y][x]!=4 && matrix[y][x]!=5){
             matrix[y][x]=0;
             }
         }
