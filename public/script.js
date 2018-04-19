@@ -20,6 +20,7 @@ var tokos2 = 1;
 var tokos3 = 1;
 var tokos4 = 0.1;
 var tokos5 = 1;
+var tokos7 = 0;
 
 
 var qanak1 = Mheight * Mlenght * tokos1 / 100;
@@ -27,6 +28,7 @@ var qanak2 = Mheight * Mlenght * tokos2 / 100;
 var qanak3 = Mheight * Mlenght * tokos3 / 100;
 var qanak4 = Mheight * Mlenght * tokos4 / 100;
 var qanak5 = Mheight * Mlenght * tokos5 / 100;
+var qanak7 = Mheight * Mlenght * tokos7 / 100;
 
 for (var z = 0; z < qanak1; ++z) {
     var rx = RandInt(0, Mlenght);
@@ -53,7 +55,11 @@ for (var z = 0; z < qanak5; ++z) {
     var ry = RandInt(0, Mheight);
     matrix[ry][rx] = 5;
 }
-
+for (var z = 0; z < qanak7; ++z) {
+    var rx = RandInt(0, Mlenght);
+    var ry = RandInt(0, Mheight);
+    matrix[ry][rx] = 7;
+}
 var time = 0;
 var exanak = 0;
 var side = 10;
@@ -63,7 +69,7 @@ var gishatichArr = [];
 var emojiArr = [];
 var vorsordArr = [];
 var bombArr = [];
-
+var cleanerArr = [];
 
 function setup() {
 
@@ -91,6 +97,9 @@ function setup() {
             }
             else if (matrix[y][x] == 6) {
                 bombArr.push(new Bomb(x, y));
+            }
+            else if (matrix[y][x] == 7) {
+                cleanerArr.push(new Cleaner(x, y));
             }
         }
     }
@@ -126,7 +135,10 @@ function draw() {
                 fill("black");
                 rect(x * side, y * side, side, side);
             }
-
+            else if (matrix[y][x] == 7) {
+                fill("grey");
+                rect(x * side, y * side, side, side);
+            }
         }
     }
     for (var i in grassArr) {
@@ -147,6 +159,9 @@ function draw() {
     }
     for (var i in bombArr) {
         bombArr[i].mnal();
+    }
+    for (var i in cleanerArr) {
+        cleanerArr[i].sharjvel();
     }
     if (xotakerArr.lenght == 0) {
         var x = RandInt(0, m);
