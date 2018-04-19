@@ -4,8 +4,8 @@ function RandInt(min, max) {
     return z;
 }
 var matrix = [];
-var Mheight = 30;
-var Mlenght = 50;
+var Mheight = 20;
+var Mlenght = 30;
 
 for (var i = 0; i <= Mheight; ++i) {
     matrix[i] = [];
@@ -19,7 +19,7 @@ var tokos1 = 50;
 var tokos2 = 1;
 var tokos3 = 1;
 var tokos4 = 0.1;
-var tokos5 = 1 ;
+var tokos5 = 1;
 
 
 var qanak1 = Mheight * Mlenght * tokos1 / 100;
@@ -54,17 +54,20 @@ for (var z = 0; z < qanak5; ++z) {
     matrix[ry][rx] = 5;
 }
 
-
-var side = 20;
+var time = 0;
+var exanak = 0;
+var side = 10;
 var grassArr = [];
 var xotakerArr = [];
 var gishatichArr = [];
 var emojiArr = [];
 var vorsordArr = [];
 var bombArr = [];
+
+
 function setup() {
 
-    frameRate(11);
+    frameRate(5);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
 
@@ -88,12 +91,11 @@ function setup() {
             }
             else if (matrix[y][x] == 6) {
                 bombArr.push(new Bomb(x, y));
-            }            
+            }
         }
     }
 }
 function draw() {
-
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 0) {
@@ -123,7 +125,7 @@ function draw() {
             else if (matrix[y][x] == 6) {
                 fill("black");
                 rect(x * side, y * side, side, side);
-            }            
+            }
 
         }
     }
@@ -146,20 +148,42 @@ function draw() {
     for (var i in bombArr) {
         bombArr[i].mnal();
     }
-    if(xotakerArr.lenght == 0){
-        var x = RandInt(0,m);
-        var y = RandInt(0,n);
-        if(matrix[y][x]<2){
-            matrix[y][x]=2;
-            xotakerArr.push(new xotaker(x,y));
-            if(matrix[y][x]==1){
+    if (xotakerArr.lenght == 0) {
+        var x = RandInt(0, m);
+        var y = RandInt(0, n);
+        if (matrix[y][x] < 2) {
+            matrix[y][x] = 2;
+            xotakerArr.push(new xotaker(x, y));
+            if (matrix[y][x] == 1) {
                 for (var i in grassArr) {
                     if (grassArr[i].x == x && grassArr[i].y == y) {
                         grassArr.splice(i, 1);
                         break;
                     }
-                }               
+                }
             }
         }
     }
+    ++time;
+    if (time > 100) {
+        ++exanak;
+        time = 0;
+        if (exanak > 4) { exanak = 0; }
+    }
+
+    var h1 = document.getElementById('exanak');
+    if (exanak == 0) {
+        h1.innerText = "Գարուն";
+    }
+    else if (exanak == 1) {
+        h1.innerText = "Ամառ";
+    }
+    else if (exanak == 3) {
+        h1.innerText = "Աշուն";
+    }
+    else if (exanak == 4) {
+        h1.innerText = "Ձմեռ";
+    }
+
 }
+
