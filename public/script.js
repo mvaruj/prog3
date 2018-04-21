@@ -70,10 +70,20 @@ var emojiArr = [];
 var vorsordArr = [];
 var bombArr = [];
 var cleanerArr = [];
+var bdcolor = '#E6DDBD';
+var grasscolor
 
 function setup() {
 
-    frameRate(5);
+    if (exanak == 1) {
+        frameRate(10);
+    }
+    else if (exanak == 3) {
+        frameRate(2);
+    }
+    else {
+        frameRate(4);
+    }
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
 
@@ -105,14 +115,43 @@ function setup() {
     }
 }
 function draw() {
+    //----FPS---
+    if (exanak == 1) {
+        frameRate(10);
+    }
+    else if (exanak == 3) {
+        frameRate(2);
+    }
+    else {
+        frameRate(4);
+    }
+    //--------COLORS----
+    if (exanak == 0) {
+        grasscolor = '#28B463';
+    }
+    else if (exanak == 1) {
+        grasscolor = '#2ECC71';
+
+    }
+    else if (exanak == 2) {
+        grasscolor = '#3A9102';
+
+    }
+    else if (exanak == 3) {
+        grasscolor = '#7DCEA0';
+        bgcolor = '#F2F3F4'; //background
+
+
+    }
+    //----CANVAS----
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 0) {
-                fill("#acacac");
+                fill("#E6DDBD");
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 1) {
-                fill("green");
+                fill(grasscolor);
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 2) {
@@ -120,15 +159,15 @@ function draw() {
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 3) {
-                fill("red");
+                fill("#C0392B");
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 4) {
-                fill("blue");
+                fill("#3498DB");
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 5) {
-                fill("orange");
+                fill("#5D6D7E");
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 6) {
@@ -136,7 +175,7 @@ function draw() {
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 7) {
-                fill("grey");
+                fill("#17202A");
                 rect(x * side, y * side, side, side);
             }
         }
@@ -179,8 +218,9 @@ function draw() {
             }
         }
     }
+    //exanak
     ++time;
-    if (time > 100) {
+    if (time > 40) {
         ++exanak;
         time = 0;
         if (exanak > 4) { exanak = 0; }
@@ -193,10 +233,10 @@ function draw() {
     else if (exanak == 1) {
         h1.innerText = "Ամառ";
     }
-    else if (exanak == 3) {
+    else if (exanak == 2) {
         h1.innerText = "Աշուն";
     }
-    else if (exanak == 4) {
+    else if (exanak == 3) {
         h1.innerText = "Ձմեռ";
     }
 
