@@ -18,6 +18,7 @@ class Grass extends KendaniEak{
     }
 
     bazmanal() {
+        ++xoter;
         this.multiply++;
         var norVandak = random(this.yntrelVandak(0));
         if (this.multiply >= 4 && norVandak) {

@@ -78,6 +78,7 @@ class Gishatich extends KendaniEak{
         }
     }
     bazmanal() {
+        ++gishtichner;
         this.energy = 5;
         var dir = random(this.yntrelVandak(0));
         if (dir) {

@@ -114,6 +114,7 @@ class Xotaker extends KendaniEak {
         }
     }
     bazmanal() {
+        ++xotakerner;
         this.energy = 8;
         this.stanalNorKordinatner();
         var dir = random(this.yntrelVandak(0));

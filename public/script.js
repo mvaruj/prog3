@@ -73,6 +73,7 @@ var cleanerArr = [];
 var bdcolor = '#E6DDBD';
 var grasscolor
 
+
 function setup() {
 
     if (exanak == 1) {
@@ -114,6 +115,10 @@ function setup() {
         }
     }
 }
+var xoter = grassArr.length;
+var xotakerner = xotakerArr.length;
+var gishatichner = gishatichArr.length;
+
 function draw() {
     //----FPS---
     if (exanak == 1) {
