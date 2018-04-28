@@ -72,7 +72,7 @@ var bombArr = [];
 var cleanerArr = [];
 var bdcolor = '#E6DDBD';
 var grasscolor
-
+var xotaker1 = 0;
 
 function setup() {
 
@@ -121,14 +121,14 @@ var gishatichner = gishatichArr.length;
 
 function draw() {
     //----FPS---
-    if (exanak == 1) {
+    if (exanak == 1) {//amar
         frameRate(10);
     }
-    else if (exanak == 3) {
-        frameRate(2);
+    else if (exanak == 3) {//dzmer
+        frameRate(4);
     }
     else {
-        frameRate(4);
+        frameRate(6);
     }
     //--------COLORS----
     if (exanak == 0) {
@@ -223,6 +223,12 @@ function draw() {
             }
         }
     }
+    //xotakerneri het galy
+    if(xotaker1>0 && matrix[0][Mlenght]<2 && exanak !=3){
+        xotakerArr.push(new Xotaker(Mlenght, 0));
+        matrix[0][Mlenght] = 2;
+        --xotaker1;
+    }
     //exanak
     ++time;
     if (time > 40) {
@@ -246,4 +252,3 @@ function draw() {
     }
 
 }
-

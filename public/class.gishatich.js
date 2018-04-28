@@ -16,7 +16,7 @@ class Gishatich extends KendaniEak{
             this.bazmanal();
         }
         var vandak2 = random(this.yntrelVandak(2));
-        if (vandak2) {
+        if (vandak2 && (vandak2[0] < (Mlenght-1) && vandak2[1] > 1)) {
             matrix[this.y][this.x] = 0;
             this.x = vandak2[0]
             this.y = vandak2[1]
@@ -78,7 +78,7 @@ class Gishatich extends KendaniEak{
         }
     }
     bazmanal() {
-        ++gishtichner;
+        ++gishatichner;
         this.energy = 5;
         var dir = random(this.yntrelVandak(0));
         if (dir) {

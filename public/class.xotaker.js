@@ -13,50 +13,44 @@ class Xotaker extends KendaniEak {
     }
     utel() {
         if (exanak == 3) {//dzmer
-            if (this.x == Mlenght && this.y == 0) { this.mahanal() }
+            if (this.x == Mlenght && this.y == 0) {
+                this.mahanal();
+                ++xotaker1;
+            }
             else {
                 var norvandak = [this.x + 1, this.y - 1];
-                if (matrix[norvandak[0]][norvandak[1]]) {
-                    if (matrix[norvandak[0]][norvandak[1]] < 2) {
-                        matrix[this.y][this.x] = 0;
-                        this.x = norvandak[0];
-                        this.y = norvandak[1];
-                        matrix[this.y][this.x] = 2;
-                    }
+                if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
+                    matrix[this.y][this.x] = 0;
+                    this.x = norvandak[0];
+                    this.y = norvandak[1];
                 }
                 else {
                     norvandak = [this.x + 1, this.y];
-                    if (matrix[norvandak[0]][norvandak[1]]) {
-                        if (matrix[norvandak[0]][norvandak[1]] < 2) {
+                    if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
+                        matrix[this.y][this.x] = 0;
+                        this.x = norvandak[0];
+                        this.y = norvandak[1];
+                    }
+                    else {
+                        norvandak = [this.x, this.y - 1];
+                        if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
                             matrix[this.y][this.x] = 0;
                             this.x = norvandak[0];
                             this.y = norvandak[1];
-                            matrix[this.y][this.x] = 2;
-                        }
-                        else {
-                            norvandak = [this.x, this.y - 1];
-                            if (matrix[norvandak[0]][norvandak[1]]) {
-                                if (matrix[norvandak[0]][norvandak[1]] < 2) {
-                                    matrix[this.y][this.x] = 0;
-                                    this.x = norvandak[0];
-                                    this.y = norvandak[1];
-                                    matrix[this.y][this.x] = 2;
-                                }
-
-                            }
-                        }
-
-                        if (matrix[this.y][this.x] == 1) {
-                            for (var i in grassArr) {
-                                if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
-                                    grassArr.splice(i, 1);
-                                    break;
-                                }
-                            }
                         }
                     }
                 }
             }
+            if (matrix[this.y][this.x] == 1) {
+                for (var i in grassArr) {
+                    if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
+                        grassArr.splice(i, 1);
+                        break;
+                    }
+                }
+            }
+            matrix[this.y][this.x] = 2;
+
         }
         //-----exanak(0,1,2)--------
         else {
@@ -132,8 +126,7 @@ class Xotaker extends KendaniEak {
                         break;
                     }
                 }
-                var norXotaker = new Xotaker(dir[0], dir[1]);
-                xotakerArr.push(norXotaker);
+                xotakerArr.push(new Xotaker(dir[0], dir[1]));
                 matrix[dir[1]][dir[0]] = 2;
             }
         }
