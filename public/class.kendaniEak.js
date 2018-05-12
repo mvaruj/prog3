@@ -5,6 +5,7 @@ class KendaniEak {
         this.x = x;
         this.y = y;
         this.directions = [];
+
     }
 
     yntrelVandak(ch) {

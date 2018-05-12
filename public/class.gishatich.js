@@ -1,10 +1,16 @@
 
 
-class Gishatich extends KendaniEak{
-    constructor(x, y) {
-        super(x,y);
+class Gishatich extends KendaniEak {
+    constructor(x, y, ser) {
+        super(x, y);
         this.energy = 5;
         this.index = 2;
+        if (ser == 0) {
+            this.ser = 'arakan';
+        }
+        else {
+            this.ser = 'igakan';
+        }
     }
     yntrelVandak(ch) {
         this.stanalNorKordinatner();
@@ -12,11 +18,15 @@ class Gishatich extends KendaniEak{
 
     }
     utel() {
-        if (this.energy > 18 && xotakerArr.length > 2 * gishatichArr.length) {
-            this.bazmanal();
+        if (this.ser == 'arakan' && xotakerArr>gishatichArr) {
+            var vandak35 = this.yntrelVandak(3.5);
+            if (vandak35) {
+                this.bazmanal();
+
+            }
         }
         var vandak2 = random(this.yntrelVandak(2));
-        if (vandak2 && (vandak2[0] < (Mlenght-1) && vandak2[1] > 1)) {
+        if (vandak2 && (vandak2[0] < (Mlenght - 1) && vandak2[1] > 1)) {
             matrix[this.y][this.x] = 0;
             this.x = vandak2[0]
             this.y = vandak2[1]
@@ -72,7 +82,7 @@ class Gishatich extends KendaniEak{
         for (var i in gishatichArr) {
             if (gishatichArr[i].x == this.x && gishatichArr[i].y == this.y) {
                 gishatichArr.splice(i, 1);
-                
+
                 break;
             }
         }
