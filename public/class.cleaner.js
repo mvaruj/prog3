@@ -20,13 +20,16 @@ class Cleaner extends KendaniEak {
         }
         return found;
     }
+    yntrelVandak(ch) {
+        this.stanalNorKordinatner();
+        return super.yntrelVandak(ch);
+    }
     sharjvel() {
 
-        var vandak = super.yntrelVandak(0);
-        if (vandak) { }
-        else {
-            var vandak = random(this.universalDir(1));
-            if (vandak == 1) {
+        var vandak = random(this.yntrelVandak(0));
+        if (!vandak) {
+            var vandak = random(this.yntrelVandak(1));
+            if (vandak) {
                 for (var i in grassArr) {
                     if (grassArr[i].x == vandak[0] && grassArr[i].y == vandak[1]) {
                         grassArr.splice(i, 1);
@@ -34,30 +37,38 @@ class Cleaner extends KendaniEak {
                     }
                 }
             }
-            else if (vandak == 2) {
-                for (var i in xotakerArr) {
-                    if (xotakerArr[i].x == vandak[0] && xotakerArr[i].y == vandak[1]) {
-                        xotakerArr.splice(i, 1);
-                        break;
+            else {
+                var vandak = random(this.yntrelVandak(2));
+                if (vandak) {
+                    for (var i in xotakerArr) {
+                        if (xotakerArr[i].x == vandak[0] && xotakerArr[i].y == vandak[1]) {
+                            xotakerArr.splice(i, 1);
+                            break;
+                        }
                     }
                 }
-            }
-            else if (vandak == 3) {
-                for (var i in gishatichArr) {
-                    if (gishatichArr[i].x == vandak[0] && gishatichArr[i].y == vandak[1]) {
-                        gishatichArr.splice(i, 1);
-                        break;
+                else {
+                    var vandak = random(this.yntrelVandak(3));
+                    if (vandak) {
+                        for (var i in gishatichArr) {
+                            if (gishatichArr[i].x == vandak[0] && gishatichArr[i].y == vandak[1]) {
+                                gishatichArr.splice(i, 1);
+                                break;
+                            }
+                        }
                     }
-                }
-            }
-            else if (vandak == 5) {
-                if (vorsordArr[i].x == vandak[0] && vorsordArr[i].y == vandak[1]) {
-                    vorsordArr.splice(i, 1);
-                    // break;
+                    else {
+                        var vandak = random(this.yntrelVandak(5));
+                        if (vandak) {
+                            if (vorsordArr[i].x == vandak[0] && vorsordArr[i].y == vandak[1]) {
+                                vorsordArr.splice(i, 1);
+                                // break;
+                            }
+                        }
+                    }
                 }
             }
         }
-
         matrix[this.y][this.x] = 0;
         this.x = vandak[0];
         this.y = vandak[1];

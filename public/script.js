@@ -15,12 +15,12 @@ for (var y = 0; y <= Mheight; y++) {
         matrix[y][x] = 0;
     }
 }
-var tokos1 = 50;
-var tokos2 = 2;
+var tokos1 = 30;
+var tokos2 = 10;
 var tokos3 = 1;
-var tokos4 = 0;
-var tokos5 = 0;
-var tokos7 = 0;
+var tokos4 = 0.1;
+var tokos5 = 1;
+var tokos7 = 0.1;
 
 
 var qanak1 = Mheight * Mlenght * tokos1 / 100;
@@ -69,25 +69,15 @@ var emojiArr = [];
 var vorsordArr = [];
 var bombArr = [];
 var cleanerArr = [];
-var bdcolor = '#E6DDBD';
-var grasscolor
+var bgcolor = '#E6DDBD';
+var grasscolor = '#28B463';
 var xotaker1 = 0;
 var h1
 
 function setup() {
     h1 = document.getElementById('exanak');
     h1.innerText = exanak;
-    if (exanak == 'amar') {
-        frameRate(10);
-    }
-    else if (exanak == 'dzmer') {
-        frameRate(2);
-    }
-    else {
-        frameRate(4);
-    }
     createCanvas(matrix[0].length * side, matrix.length * side);
-    background('#acacac');
 
 
     for (var y = 0; y < matrix.length; y++) {
@@ -125,34 +115,8 @@ var xotakerner = xotakerArr.length;
 var gishatichner = gishatichArr.length;
 
 function draw() {
-    //----FPS---
-    if (exanak == 'amar') {
-        frameRate(10);
-    }
-    else if (exanak == 'dzmer') {
-        frameRate(4);
-    }
-    else {
-        frameRate(6);
-    }
-    //--------COLORS----
-    if (exanak == 'garun') {
-        grasscolor = '#28B463';
-    }
-    else if (exanak == 'amar') {
-        grasscolor = '#2ECC71';
+    background(bgcolor);
 
-    }
-    else if (exanak == 'ashun') {
-        grasscolor = '#3A9102';
-
-    }
-    else if (exanak == 'dzmer') {
-        grasscolor = '#7DCEA0';
-        bgcolor = '#F2F3F4'; //background
-
-
-    }
     //----CANVAS----
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
@@ -231,28 +195,37 @@ function draw() {
 }
 //xotakerneri het galy
 if (xotaker1 > 0 && matrix[0][Mlenght] < 2 && exanak != 3) {
-    xotakerArr.push(new Xotaker(Mlenght, 0));
-    matrix[0][Mlenght] = 2;
+    var ser = Math.random(Math.random()) / 2;
+    xotakerArr.push(new Xotaker(Mlenght, 0, ser));
+    matrix[0][Mlenght] = 2 + ser;
     --xotaker1;
 }
 //exanak
 
 setInterval(function () {
     if (exanak == "dzmer") {
+        grasscolor = '#28B463';
+        frameRate(4);
         exanak = "garun";
         h1.innerText = "garun";
     }
     else if (exanak == "garun") {
+        grasscolor = '#2ECC71';
+        frameRate(10);
         exanak = "amar";
         h1.innerText = "amar";
     }
     else if (exanak == "amar") {
+        grasscolor = '#3A9102';
+        frameRate(4);
         exanak = "ashun";
         h1.innerText = "ashun";
     }
     else if (exanak == "ashun") {
+        grasscolor = '#7DCEA0';
+        bgcolor = '#F2F3F4';
         exanak = "dzmer";
         h1.innerText = "dzmer";
+        frameRate(2);
     }
-
 }, 2000);

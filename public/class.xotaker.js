@@ -18,48 +18,48 @@ class Xotaker extends KendaniEak {
         return super.yntrelVandak(ch);
     }
     utel() {
-        //     if (exanak == 'dzmer') {//dzmer
-        //         if (this.x == Mlenght && this.y == 0) {
-        //             this.mahanal();
-        //             ++xotaker1;
-        //         }
-        //         else {
-        //             var norvandak = [this.x + 1, this.y - 1];
-        //             if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
-        //                 matrix[this.y][this.x] = 0;
-        //                 this.x = norvandak[0];
-        //                 this.y = norvandak[1];
-        //             }
-        //             else {
-        //                 norvandak = [this.x + 1, this.y];
-        //                 if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
-        //                     matrix[this.y][this.x] = 0;
-        //                     this.x = norvandak[0];
-        //                     this.y = norvandak[1];
-        //                 }
-        //                 else {
-        //                     norvandak = [this.x, this.y - 1];
-        //                     if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
-        //                         matrix[this.y][this.x] = 0;
-        //                         this.x = norvandak[0];
-        //                         this.y = norvandak[1];
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //         if (matrix[this.y][this.x] == 1) {
-        //             for (var i in grassArr) {
-        //                 if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
-        //                     grassArr.splice(i, 1);
-        //                     break;
-        //                 }
-        //             }
-        //         }
-        //         matrix[this.y][this.x] = 2;
+            if (exanak == 'dzmer') {//dzmer
+                if (this.x == Mlenght && this.y == 0) {
+                    this.mahanal();
+                    ++xotaker1;
+                }
+                else {
+                    var norvandak = [this.x + 1, this.y - 1];
+                    if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
+                        matrix[this.y][this.x] = 0;
+                        this.x = norvandak[0];
+                        this.y = norvandak[1];
+                    }
+                    else {
+                        norvandak = [this.x + 1, this.y];
+                        if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
+                            matrix[this.y][this.x] = 0;
+                            this.x = norvandak[0];
+                            this.y = norvandak[1];
+                        }
+                        else {
+                            norvandak = [this.x, this.y - 1];
+                            if (matrix[norvandak[1]] && matrix[norvandak[1]][norvandak[0]] && matrix[norvandak[1]][norvandak[0]] < 2) {
+                                matrix[this.y][this.x] = 0;
+                                this.x = norvandak[0];
+                                this.y = norvandak[1];
+                            }
+                        }
+                    }
+                }
+                if (matrix[this.y][this.x] == 1) {
+                    for (var i in grassArr) {
+                        if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
+                            grassArr.splice(i, 1);
+                            break;
+                        }
+                    }
+                }
+                matrix[this.y][this.x] = 2;
 
-        //     }
-        //  //-----exanak(0,1,2)--------
-        // else {
+            }
+         //-----exanak(0,1,2)--------
+        else {
         if (this.ser == 'arakan') {
             var vandak25 = this.yntrelVandak(2.5);
             if (vandak25) {
@@ -91,7 +91,7 @@ class Xotaker extends KendaniEak {
         }
     }
 
-    //}
+    }
     sharjvel() {
 
 
@@ -104,8 +104,9 @@ class Xotaker extends KendaniEak {
             matrix[this.y][this.x] = 2;
             this.energy--;
             if (this.energy <= 0 && xotakerArr.length > 1) {
-                // this.mahanal();
+                 this.mahanal();
             }
+            else{this.energy = 6;}
         }
     }
     mahanal() {
@@ -118,10 +119,6 @@ class Xotaker extends KendaniEak {
         }
     }
     bazmanal() {
-        if (random(1) >= 0.5) {
-            var s = 'eg';
-        }
-        else { var s = 'aru' }
         ++xotakerner;
         this.energy = 8;
         this.stanalNorKordinatner();
