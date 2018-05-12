@@ -7,7 +7,7 @@ class Xotaker extends KendaniEak {
         this.energy = 5;
         this.index = 2;
         if (ser == 0) {
-            this.ser = 'arakan';
+            this.ser = ' arakan';
         }
         else {
             this.ser = 'igakan';
